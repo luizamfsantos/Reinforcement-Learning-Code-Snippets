@@ -4,6 +4,7 @@ from gym.spaces import Discrete
 from gym.utils import seeding
 
 class BanditEnv(Env):
+    metadata = {'render_modes': []}
     def __init__(self, n_bandits=10):
         self.n_bandits = n_bandits
         self._seed = self._seed()
@@ -13,3 +14,9 @@ class BanditEnv(Env):
     def _seed(self, seed=None):
         self.np_random, seed = seeding.np_random(seed)
         return seed
+
+    def reset(self):
+        pass
+
+    def step(self, action):
+        pass
